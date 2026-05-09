@@ -1,10 +1,499 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=public/index.html">
-  <title>Redirecting...</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Valentino Tristanadi — Information Technology Student</title>
+<meta name="description" content="Portfolio pribadi Valentino Tristanadi — Information Technology Student dari Metland Vocational School berbasis di Bekasi." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./portfolio.css" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+          serif: ['Fraunces', 'Georgia', 'serif'],
+        },
+        colors: {
+          ink: {
+            900: '#0a0a0a',
+            800: '#111111',
+            700: '#1a1a1a',
+            600: '#262626',
+            500: '#404040',
+            400: '#737373',
+            300: '#a3a3a3',
+            200: '#d4d4d4',
+            100: '#f5f5f5',
+          }
+        }
+      }
+    }
+  }
+</script>
 </head>
-<body>
+<body class="bg-ink-900 text-ink-200 font-sans antialiased selection:bg-white selection:text-black">
+
+<!-- NAVBAR -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+  <nav class="max-w-6xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 md:h-20">
+    <a href="#hero" class="text-white font-serif text-xl tracking-tight">valentino<span class="text-ink-400">.</span></a>
+
+    <ul class="hidden md:flex items-center gap-8 text-sm">
+      <li><a class="nav-link text-ink-300 hover:text-white transition" href="#about">About</a></li>
+      <li><a class="nav-link text-ink-300 hover:text-white transition" href="#education">Education</a></li>
+      <li><a class="nav-link text-ink-300 hover:text-white transition" href="#experience">Experience</a></li>
+      <li><a class="nav-link text-ink-300 hover:text-white transition" href="#projects">Projects</a></li>
+      <li><a class="nav-link text-ink-300 hover:text-white transition" href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="hidden md:inline-flex items-center gap-2 text-sm border border-ink-600 hover:border-white text-white px-4 py-2 rounded-full transition-all">
+      Let's talk
+      <span aria-hidden="true">→</span>
+    </a>
+
+    <button id="menuBtn" class="md:hidden text-white" aria-label="Toggle menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </nav>
+
+  <div id="mobileMenu" class="md:hidden hidden border-t border-ink-700 bg-ink-900/95 backdrop-blur">
+    <ul class="flex flex-col px-6 py-4 gap-4 text-sm">
+      <li><a class="block text-ink-300" href="#about">About</a></li>
+      <li><a class="block text-ink-300" href="#education">Education</a></li>
+      <li><a class="block text-ink-300" href="#experience">Experience</a></li>
+      <li><a class="block text-ink-300" href="#projects">Projects</a></li>
+      <li><a class="block text-ink-300" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="relative min-h-screen flex items-center px-6 lg:px-10 overflow-hidden">
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.08),_transparent_60%)]"></div>
+  <div class="absolute inset-0 -z-10 grain"></div>
+
+  <div class="max-w-6xl mx-auto w-full">
+    <p class="reveal text-xs tracking-[0.3em] text-ink-400 uppercase mb-6">Portfolio · 2025</p>
+    <h1 class="reveal font-serif text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight">
+      Valentino<br />Tristanadi<span class="text-ink-500">.</span>
+    </h1>
+    <p class="reveal mt-8 max-w-xl text-lg md:text-xl text-ink-300 leading-relaxed">
+      Information Technology student at Metland Vocational School with a strong interest in data management and web development.
+    </p>
+    <div class="reveal mt-10 flex flex-wrap gap-4">
+      <a href="#projects" class="group inline-flex items-center gap-3 bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-ink-200 transition-all">
+        View Projects
+        <span class="transition-transform group-hover:translate-x-1">→</span>
+      </a>
+      <a href="#contact" class="inline-flex items-center gap-3 border border-ink-600 hover:border-white text-white px-6 py-3 rounded-full text-sm font-medium transition-all">
+        Contact Me
+      </a>
+    </div>
+
+    <div class="reveal absolute bottom-10 left-6 lg:left-10 text-xs text-ink-500 tracking-widest uppercase flex items-center gap-3">
+      <span class="w-10 h-px bg-ink-500"></span> Scroll
+    </div>
+    <div class="reveal absolute bottom-10 right-6 lg:right-10 text-xs text-ink-500 hidden md:block">
+      Available for select projects — 2026
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-32 px-6 lg:px-10 border-t border-ink-800">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-4 reveal">
+      <p class="text-xs tracking-[0.3em] text-ink-400 uppercase">01 — About</p>
+      <h2 class="font-serif text-white text-4xl md:text-5xl mt-6 leading-tight">Reliable and well-organized.</h2>
+    </div>
+    <div class="md:col-span-7 md:col-start-6 space-y-6 text-ink-300 text-lg leading-relaxed reveal">
+      <p>
+        I am an Information Technology student at Metland Vocational School with a strong interest in web design and front-end development. I enjoy creating clean, responsive, and user-friendly interfaces that combine visual appeal with functional usability. Through academic projects and self-directed learning, I continue to develop my skills in modern web technologies while deepening my understanding of design principles and user experience. I am a disciplined, reliable, and well-organized individual who values creativity, precision, and continuous improvement.
+      </p>
+      <div class="pt-6 border-t border-ink-800">
+        <p class="text-sm text-ink-400 mb-6">Technical Skills</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="bg-ink-800/30 p-4 rounded-lg border border-ink-700">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white text-sm font-medium">HTML & CSS</span>
+              <span class="text-ink-300 text-xs">95%</span>
+            </div>
+            <div class="w-full bg-ink-700 rounded-full h-2">
+              <div class="bg-green-400 h-2 rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="bg-ink-800/30 p-4 rounded-lg border border-ink-700">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white text-sm font-medium">JavaScript</span>
+              <span class="text-ink-300 text-xs">80%</span>
+            </div>
+            <div class="w-full bg-ink-700 rounded-full h-2">
+              <div class="bg-green-400 h-2 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="bg-ink-800/30 p-4 rounded-lg border border-ink-700">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white text-sm font-medium">PHP</span>
+              <span class="text-ink-300 text-xs">60%</span>
+            </div>
+            <div class="w-full bg-ink-700 rounded-full h-2">
+              <div class="bg-green-400 h-2 rounded-full" style="width: 60%"></div>
+            </div>
+          </div>
+          <div class="bg-ink-800/30 p-4 rounded-lg border border-ink-700">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white text-sm font-medium">UI/UX Design</span>
+              <span class="text-ink-300 text-xs">80%</span>
+            </div>
+            <div class="w-full bg-ink-700 rounded-full h-2">
+              <div class="bg-green-400 h-2 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="bg-ink-800/30 p-4 rounded-lg border border-ink-700">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white text-sm font-medium">Microsoft Word</span>
+              <span class="text-ink-300 text-xs">80%</span>
+            </div>
+            <div class="w-full bg-ink-700 rounded-full h-2">
+              <div class="bg-green-400 h-2 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="bg-ink-800/30 p-4 rounded-lg border border-ink-700">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white text-sm font-medium">Microsoft Excel</span>
+              <span class="text-ink-300 text-xs">80%</span>
+            </div>
+            <div class="w-full bg-ink-700 rounded-full h-2">
+              <div class="bg-green-400 h-2 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-ink-800">
+        <p class="text-sm text-ink-400 mb-6">Languages</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="bg-ink-800/30 p-4 rounded-lg border border-ink-700">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white text-sm font-medium">Indonesian</span>
+              <span class="text-ink-300 text-xs">100%</span>
+            </div>
+            <div class="w-full bg-ink-700 rounded-full h-2">
+              <div class="bg-green-400 h-2 rounded-full" style="width: 100%"></div>
+            </div>
+          </div>
+          <div class="bg-ink-800/30 p-4 rounded-lg border border-ink-700">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white text-sm font-medium">English</span>
+              <span class="text-ink-300 text-xs">40%</span>
+            </div>
+            <div class="w-full bg-ink-700 rounded-full h-2">
+              <div class="bg-green-400 h-2 rounded-full" style="width: 40%"></div>
+            </div>
+          </div>
+          <div class="bg-ink-800/30 p-4 rounded-lg border border-ink-700">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white text-sm font-medium">Japanese</span>
+              <span class="text-ink-300 text-xs">20%</span>
+            </div>
+            <div class="w-full bg-ink-700 rounded-full h-2">
+              <div class="bg-green-400 h-2 rounded-full" style="width: 20%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="py-32 px-6 lg:px-10 border-t border-ink-800">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal mb-16">
+      <p class="text-xs tracking-[0.3em] text-ink-400 uppercase">02 — Education</p>
+      <h2 class="font-serif text-white text-4xl md:text-5xl mt-6 leading-tight">My educational journey.</h2>
+    </div>
+
+    <div class="space-y-px">
+      <article class="reveal group grid md:grid-cols-12 gap-4 py-8 border-t border-ink-800 hover:bg-ink-800/30 transition-colors px-2 -mx-2 rounded">
+        <p class="md:col-span-2 text-ink-400 text-sm">2024 — Present</p>
+        <div class="md:col-span-7">
+          <h3 class="text-white text-xl font-medium">Metland Vocational School</h3>
+          <p class="text-ink-400 mt-1">Information Technology Major</p>
+        </div>
+        <p class="md:col-span-3 text-ink-300 text-sm md:text-right">Bekasi</p>
+      </article>
+
+      <article class="reveal group grid md:grid-cols-12 gap-4 py-8 border-t border-ink-800 hover:bg-ink-800/30 transition-colors px-2 -mx-2 rounded">
+        <p class="md:col-span-2 text-ink-400 text-sm">2021 — 2024</p>
+        <div class="md:col-span-7">
+          <h3 class="text-white text-xl font-medium">SMP Negeri 8 Cibitung</h3>
+          <p class="text-ink-400 mt-1">Junior High School</p>
+        </div>
+        <p class="md:col-span-3 text-ink-300 text-sm md:text-right">Bekasi</p>
+      </article>
+
+      <article class="reveal group grid md:grid-cols-12 gap-4 py-8 border-t border-b border-ink-800 hover:bg-ink-800/30 transition-colors px-2 -mx-2 rounded">
+        <p class="md:col-span-2 text-ink-400 text-sm">2015 — 2021</p>
+        <div class="md:col-span-7">
+          <h3 class="text-white text-xl font-medium">SD Negeri Telaga Murni 02</h3>
+          <p class="text-ink-400 mt-1">Elementary School</p>
+        </div>
+        <p class="md:col-span-3 text-ink-300 text-sm md:text-right">Bekasi</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="py-32 px-6 lg:px-10 border-t border-ink-800">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal mb-16">
+      <p class="text-xs tracking-[0.3em] text-ink-400 uppercase">03 — Experience</p>
+      <h2 class="font-serif text-white text-4xl md:text-5xl mt-6 leading-tight">My experience and activities.</h2>
+    </div>
+
+    <div class="space-y-12">
+      <article class="reveal grid md:grid-cols-12 gap-6 pb-12 border-b border-ink-800">
+        <p class="md:col-span-3 text-ink-400 text-sm">August 30, 2025</p>
+        <div class="md:col-span-9">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-white text-2xl font-medium">Performer, Maheswara Catwalk</h3>
+            <span class="text-ink-300">Sambut Generasi Cinta Prestasi · Millenia Hub Metland Cibitung</span>
+          </div>
+          <p class="text-ink-400 mt-2">Participated as a performer in the "Sambut Generasi Cinta Prestasi" school event held at Millenia Hub, Metland Cibitung.</p>
+        </div>
+      </article>
+
+      <article class="reveal grid md:grid-cols-12 gap-6 pb-12 border-b border-ink-800">
+        <p class="md:col-span-3 text-ink-400 text-sm">July 14, 2025</p>
+        <div class="md:col-span-9">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-white text-2xl font-medium">Organizing Committee Member</h3>
+            <span class="text-ink-300">New Student Orientation Program · Metland School Cibitung</span>
+          </div>
+          <p class="text-ink-400 mt-2">Contributed to the organization and execution of the "Fit, Fun, and Friendship 2025" orientation program at Metland School Cibitung, Bekasi.</p>
+        </div>
+      </article>
+
+      <article class="reveal grid md:grid-cols-12 gap-6 pb-12 border-b border-ink-800">
+        <p class="md:col-span-3 text-ink-400 text-sm">May 31, 2025</p>
+        <div class="md:col-span-9">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-white text-2xl font-medium">Organizing Committee Member</h3>
+            <span class="text-ink-300">School Promotion Event · Metland School Cileungsi</span>
+          </div>
+          <p class="text-ink-400 mt-2">Served as a committee member for the "Mahes of Creativity Vol. 2" promotional event at Metland School Cileungsi, Bogor.</p>
+        </div>
+      </article>
+
+      <article class="reveal grid md:grid-cols-12 gap-6 pb-12 border-b border-ink-800">
+        <p class="md:col-span-3 text-ink-400 text-sm">March 2, 2025</p>
+        <div class="md:col-span-9">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-white text-2xl font-medium">Organizing Committee Member</h3>
+            <span class="text-ink-300">School Promotion Event · Metland School Cibitung</span>
+          </div>
+          <p class="text-ink-400 mt-2">Participated in organizing the "Metschoofest 2025" promotional event at Metland School Cibitung, Bekasi.</p>
+        </div>
+      </article>
+
+      <article class="reveal grid md:grid-cols-12 gap-6 pb-12 border-b border-ink-800">
+        <p class="md:col-span-3 text-ink-400 text-sm">February 15, 2025 – February 14, 2026</p>
+        <div class="md:col-span-9">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-white text-2xl font-medium">Finalist, Maheswara Maheswari School Ambassador</h3>
+            <span class="text-ink-300">School Ambassador Program · Metland School Cibitung</span>
+          </div>
+          <p class="text-ink-400 mt-2">Selected as a finalist for the Maheswara Maheswari School Ambassador program at Metland School Cibitung, Bekasi.</p>
+        </div>
+      </article>
+
+      <article class="reveal grid md:grid-cols-12 gap-6 pb-12 border-b border-ink-800">
+        <p class="md:col-span-3 text-ink-400 text-sm">November 16, 2024</p>
+        <div class="md:col-span-9">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-white text-2xl font-medium">Performer, Website Development Presentation</h3>
+            <span class="text-ink-300">School Ambassador Event · Metland School Cibitung</span>
+          </div>
+          <p class="text-ink-400 mt-2">Presented a website development project during the Maheswara Maheswari School Ambassador event at Metland School Cibitung, Bekasi.</p>
+        </div>
+      </article>
+
+      <article class="reveal grid md:grid-cols-12 gap-6 pb-12 border-b border-ink-800">
+        <p class="md:col-span-3 text-ink-400 text-sm">2025</p>
+        <div class="md:col-span-9">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-white text-2xl font-medium">Performer, Theatrical Show</h3>
+            <span class="text-ink-300">School Parenting Event · Millenia Hub Metland Cibitung</span>
+          </div>
+          <p class="text-ink-400 mt-2">Participated as a performer in the "Sambut Generasi Cinta Prestasi (GCP)" School Parenting Event held at Millenia Hub, Metland Cibitung, Bekasi.</p>
+        </div>
+      </article>
+
+      <article class="reveal grid md:grid-cols-12 gap-6">
+        <p class="md:col-span-3 text-ink-400 text-sm">2025</p>
+        <div class="md:col-span-9">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-white text-2xl font-medium">Performer, Modern Dance</h3>
+            <span class="text-ink-300">PT. Metropolitan Land Tbk · Metropolitan Mall Cileungsi</span>
+          </div>
+          <p class="text-ink-400 mt-2">Performed in the PT. Metropolitan Land Tbk "Kick Off" Event held at Metropolitan Mall Cileungsi (MMC), Bogor.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-32 px-6 lg:px-10 border-t border-ink-800">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal mb-16 flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="text-xs tracking-[0.3em] text-ink-400 uppercase">04 — Projects</p>
+        <h2 class="font-serif text-white text-4xl md:text-5xl mt-6 leading-tight">Things I've built recently.</h2>
+      </div>
+      <p class="text-ink-400 text-sm max-w-xs">Pilihan proyek yang saya rasa paling mewakili pendekatan saya pada desain & engineering.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Project Card -->
+      <article class="reveal project-card group relative overflow-hidden rounded-2xl border border-ink-800 bg-ink-800/40 p-8 hover:border-ink-600 transition-all">
+        <div class="flex items-start justify-between">
+          <span class="text-xs text-ink-400 tracking-widest uppercase">Web App</span>
+          <span class="text-xs text-ink-500">2025</span>
+        </div>
+        <h3 class="font-serif text-white text-3xl mt-10">Halcyon Notes</h3>
+        <p class="text-ink-400 mt-3 text-sm leading-relaxed">A markdown-first journaling app with local-first sync, calm typography, and zero distractions.</p>
+        <div class="mt-6 flex flex-wrap gap-2 text-[11px]">
+          <span class="px-2.5 py-1 rounded-full border border-ink-700 text-ink-300">Next.js</span>
+          <span class="px-2.5 py-1 rounded-full border border-ink-700 text-ink-300">TypeScript</span>
+          <span class="px-2.5 py-1 rounded-full border border-ink-700 text-ink-300">SQLite</span>
+        </div>
+        <div class="mt-8 flex gap-4 text-sm">
+          <a href="#" class="text-white border-b border-ink-600 hover:border-white pb-0.5 transition">Live Demo →</a>
+          <a href="#" class="text-ink-400 hover:text-white border-b border-transparent hover:border-ink-600 pb-0.5 transition">Repository</a>
+        </div>
+      </article>
+
+      <article class="reveal project-card group relative overflow-hidden rounded-2xl border border-ink-800 bg-ink-800/40 p-8 hover:border-ink-600 transition-all">
+        <div class="flex items-start justify-between">
+          <span class="text-xs text-ink-400 tracking-widest uppercase">Design System</span>
+          <span class="text-xs text-ink-500">2024</span>
+        </div>
+        <h3 class="font-serif text-white text-3xl mt-10">Monochrome UI</h3>
+        <p class="text-ink-400 mt-3 text-sm leading-relaxed">An open-source component library focused on grayscale palettes, accessibility, and reduced motion.</p>
+        <div class="mt-6 flex flex-wrap gap-2 text-[11px]">
+          <span class="px-2.5 py-1 rounded-full border border-ink-700 text-ink-300">React</span>
+          <span class="px-2.5 py-1 rounded-full border border-ink-700 text-ink-300">Radix</span>
+          <span class="px-2.5 py-1 rounded-full border border-ink-700 text-ink-300">Tailwind</span>
+        </div>
+        <div class="mt-8 flex gap-4 text-sm">
+          <a href="#" class="text-white border-b border-ink-600 hover:border-white pb-0.5 transition">Documentation →</a>
+          <a href="#" class="text-ink-400 hover:text-white border-b border-transparent hover:border-ink-600 pb-0.5 transition">GitHub</a>
+        </div>
+      </article>
+
+      <article class="reveal project-card group relative overflow-hidden rounded-2xl border border-ink-800 bg-ink-800/40 p-8 hover:border-ink-600 transition-all">
+        <div class="flex items-start justify-between">
+          <span class="text-xs text-ink-400 tracking-widest uppercase">Mobile</span>
+          <span class="text-xs text-ink-500">2024</span>
+        </div>
+        <h3 class="font-serif text-white text-3xl mt-10">Senja Coffee</h3>
+        <p class="text-ink-400 mt-3 text-sm leading-relaxed">Brand identity & loyalty app for a specialty coffee roaster in Bandung. Designed end-to-end in 6 weeks.</p>
+        <div class="mt-6 flex flex-wrap gap-2 text-[11px]">
+          <span class="px-2.5 py-1 rounded-full border border-ink-700 text-ink-300">React Native</span>
+          <span class="px-2.5 py-1 rounded-full border border-ink-700 text-ink-300">Figma</span>
+          <span class="px-2.5 py-1 rounded-full border border-ink-700 text-ink-300">Supabase</span>
+        </div>
+        <div class="mt-8 flex gap-4 text-sm">
+          <a href="#" class="text-white border-b border-ink-600 hover:border-white pb-0.5 transition">Case Study →</a>
+          <a href="#" class="text-ink-400 hover:text-white border-b border-transparent hover:border-ink-600 pb-0.5 transition">App Store</a>
+        </div>
+      </article>
+
+      <article class="reveal project-card group relative overflow-hidden rounded-2xl border border-ink-800 bg-ink-800/40 p-8 hover:border-ink-600 transition-all">
+        <div class="flex items-start justify-between">
+          <span class="text-xs text-ink-400 tracking-widest uppercase">Marketing Site</span>
+          <span class="text-xs text-ink-500">2023</span>
+        </div>
+        <h3 class="font-serif text-white text-3xl mt-10">Atelier Noir</h3>
+        <p class="text-ink-400 mt-3 text-sm leading-relaxed">Editorial site for an independent architecture studio, featuring scroll-driven storytelling and bespoke typography.</p>
+        <div class="mt-6 flex flex-wrap gap-2 text-[11px]">
+          <span class="px-2.5 py-1 rounded-full border border-ink-700 text-ink-300">Astro</span>
+          <span class="px-2.5 py-1 rounded-full border border-ink-700 text-ink-300">GSAP</span>
+          <span class="px-2.5 py-1 rounded-full border border-ink-700 text-ink-300">Sanity</span>
+        </div>
+        <div class="mt-8 flex gap-4 text-sm">
+          <a href="#" class="text-white border-b border-ink-600 hover:border-white pb-0.5 transition">Visit Site →</a>
+          <a href="#" class="text-ink-400 hover:text-white border-b border-transparent hover:border-ink-600 pb-0.5 transition">Case Study</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-32 px-6 lg:px-10 border-t border-ink-800">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-5 reveal">
+      <p class="text-xs tracking-[0.3em] text-ink-400 uppercase">05 — Contact</p>
+      <h2 class="font-serif text-white text-4xl md:text-5xl mt-6 leading-tight">Let's get in touch.</h2>
+      <p class="text-ink-400 mt-6 max-w-sm">Interested in collaboration or just want to chat? I read every message that comes in.</p>
+
+      <ul class="mt-10 space-y-4 text-sm">
+        <li class="flex items-center gap-4">
+          <span class="text-ink-500 text-xs uppercase tracking-widest w-16">Email</span>
+          <a href="mailto:vtristanadi548@gmail.com" class="text-white border-b border-ink-600 hover:border-white pb-0.5 transition">vtristanadi548@gmail.com</a>
+        </li>
+        <li class="flex items-center gap-4">
+          <span class="text-ink-500 text-xs uppercase tracking-widest w-16">Phone</span>
+          <a href="tel:+6289669497155" class="text-white border-b border-ink-600 hover:border-white pb-0.5 transition">+62 896-6949-7155</a>
+        </li>
+        <li class="flex items-center gap-4">
+          <span class="text-ink-500 text-xs uppercase tracking-widest w-16">Address</span>
+          <span class="text-white">Selang Cironggeng, Cibitung, Bekasi, Indonesia</span>
+        </li>
+      </ul>
+    </div>
+
+    <form id="contactForm" class="md:col-span-7 reveal space-y-6" novalidate>
+      <div>
+        <label for="name" class="block text-xs uppercase tracking-widest text-ink-400 mb-2">Name</label>
+        <input id="name" name="name" type="text" required class="w-full bg-transparent border-b border-ink-700 focus:border-white outline-none py-3 text-white placeholder:text-ink-500 transition" placeholder="Your full name" />
+        <p class="error-msg text-xs text-red-400 mt-2 hidden"></p>
+      </div>
+      <div>
+        <label for="email" class="block text-xs uppercase tracking-widest text-ink-400 mb-2">Email</label>
+        <input id="email" name="email" type="email" required class="w-full bg-transparent border-b border-ink-700 focus:border-white outline-none py-3 text-white placeholder:text-ink-500 transition" placeholder="you@domain.com" />
+        <p class="error-msg text-xs text-red-400 mt-2 hidden"></p>
+      </div>
+      <div>
+        <label for="message" class="block text-xs uppercase tracking-widest text-ink-400 mb-2">Message</label>
+        <textarea id="message" name="message" rows="4" required class="w-full bg-transparent border-b border-ink-700 focus:border-white outline-none py-3 text-white placeholder:text-ink-500 transition resize-none" placeholder="Tell me about your project…"></textarea>
+        <p class="error-msg text-xs text-red-400 mt-2 hidden"></p>
+      </div>
+      <button type="submit" class="group inline-flex items-center gap-3 bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-ink-200 transition-all">
+        Send Message
+        <span class="transition-transform group-hover:translate-x-1">→</span>
+      </button>
+      <p id="formStatus" class="text-sm text-ink-300 hidden"></p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-ink-800 py-10 px-6 lg:px-10">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ink-500">
+    <p>© 2025 Valentino Tristanadi. Crafted with care.</p>
+    <p>Designed & built in Bekasi.</p>
+  </div>
+</footer>
+
+<script src="./portfolio.js"></script>
 </body>
 </html>
